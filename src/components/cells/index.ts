@@ -24,6 +24,9 @@ import { CartItemsFooter } from './CartItemsFooter/CartItemsFooter';
 import { CartItemsProducts } from './CartItemsProducts/CartItemsProducts';
 import { HeadingCategories } from './HeadingCategories/HeadingCategories';
 import { CartDropdown } from './CartDropdown/CartDropdown';
+import { ProfileSidebarSections } from './ProfileSidebarSections/ProfileSidebarSections';
+import { ProfileHeaderButtons } from './ProfileHeaderButtons/ProfileHeaderButtons';
+import { ProfileProductCard } from './ProfileProductCard/ProfileProductCard';
 
 export {
   Navbar,
@@ -52,4 +55,7 @@ export {
   CartItemsProducts,
   HeadingCategories,
   CartDropdown,
+  ProfileSidebarSections,
+  ProfileHeaderButtons,
+  ProfileProductCard,
 };

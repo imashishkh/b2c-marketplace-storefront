@@ -25,6 +25,9 @@ import { HeaderCategoryNavbar } from './HeaderCategoryNavbar/HeaderCategoryNavba
 import { DeleteCartItemButton } from './DeleteCartItemButton/DeleteCartItemButton';
 import { Dropdown } from './Dropdown/Dropdown';
 import { CartDropdownItem } from './CartDropdownItem/CartDropdownItem';
+import { ProfileSidebarLink } from './ProfileSidebarLink/ProfileSidebarLink';
+import { ProfileProductMenu } from './ProfileProductMenu/ProfileProductMenu';
+import { ProfileProductsEmptyScreen } from './ProfileProductsEmptyScreen/ProfileProductsEmptyScreen';
 
 export {
   PrimeCategoryNavbar,
@@ -54,4 +57,7 @@ export {
   DeleteCartItemButton,
   Dropdown,
   CartDropdownItem,
+  ProfileSidebarLink,
+  ProfileProductMenu,
+  ProfileProductsEmptyScreen,
 };

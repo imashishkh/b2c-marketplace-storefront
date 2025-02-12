@@ -52,7 +52,7 @@ export default async function Home({
       />
       <div className='px-4 lg:px-8 w-full'>
         <HomeProductSection
-          heading='trending listings'
+          heading='Latest listings'
           locale={locale}
         />
       </div>

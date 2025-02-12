@@ -4,6 +4,7 @@ import {
 } from '@/components/organisms';
 import { listProducts } from '@/lib/data/products';
 import { HomeProductSection } from '../HomeProductSection/HomeProductSection';
+import { listReviews } from '@/lib/data/reviews';
 
 export const ProductDetailsPage = async ({
   handle,
@@ -14,8 +15,15 @@ export const ProductDetailsPage = async ({
 }) => {
   const prod = await listProducts({
     countryCode: locale,
-    queryParams: { handle },
+    queryParams: {
+      handle,
+      fields:
+        '*variants.calculated_price,+variants.inventory_quantity,+review,+reviews',
+    },
   }).then(({ response }) => response.products[0]);
+
+  console.log({ prod });
+  const reviews = await listReviews();
 
   return (
     <>

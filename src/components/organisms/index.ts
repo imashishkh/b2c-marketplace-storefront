@@ -19,6 +19,9 @@ import { WishlistTabs } from './WishlistTabs/WishlistTabs';
 import { HomeProductsCarousel } from './HomeProductsCarousel/HomeProductsCarousel';
 import { ProductGallery } from './ProductGallery/ProductGallery';
 import { ProductDetails } from './ProductDetails/ProductDetails';
+import { ProfileHeader } from './ProfileHeader/ProfileHeader';
+import { ProfileSidebar } from './ProfileSidebar/ProfileSidebar';
+import { ProfileProducts } from './ProfileProducts/ProfileProducts';
 
 export {
   ProductCard,
@@ -42,4 +45,7 @@ export {
   HomeProductsCarousel,
   ProductGallery,
   ProductDetails,
+  ProfileHeader,
+  ProfileSidebar,
+  ProfileProducts,
 };

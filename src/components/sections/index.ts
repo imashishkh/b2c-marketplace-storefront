@@ -10,6 +10,9 @@ import { SellerPageHeader } from './SellerPageHeader/SellerPageHeader';
 import { Cart } from './Cart/Cart';
 import { WishlistPage } from './WishlistPage/WishlistPage';
 import { ProductDetailsPage } from './ProductDetailsPage/ProductDetailsPage';
+import { ProfilePage } from './ProfilePage/ProfilePage';
+import { LoginPage } from './LoginPage/LoginPage';
+import { RegisterPage } from './RegisterPage/RegisterPage';
 
 export {
   Hero,
@@ -24,4 +27,7 @@ export {
   Cart,
   WishlistPage,
   ProductDetailsPage,
+  ProfilePage,
+  LoginPage,
+  RegisterPage,
 };
