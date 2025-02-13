@@ -5,15 +5,10 @@ export const metadata: Metadata = {
   title: 'Profile',
 };
 
-export default async function UserPage({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  const { locale } = await params;
+export default async function UserPage() {
   return (
     <main className='container'>
-      <ProfilePage locale={locale} />
+      <ProfilePage />
     </main>
   );
 }

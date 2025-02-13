@@ -1,11 +1,11 @@
 import { LoginPage } from '@/components/sections';
-import { retrieveCustomer } from '@/lib/data/customer';
+import { retrieveSeller } from '@/lib/data/seller';
 import { redirect } from 'next/navigation';
 
 export default async function Login() {
-  const customer = await retrieveCustomer();
+  const vendor = await retrieveSeller();
 
-  if (customer) {
+  if (vendor) {
     redirect('/profile');
   }
 

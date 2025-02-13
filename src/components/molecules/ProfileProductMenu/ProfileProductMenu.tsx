@@ -32,7 +32,6 @@ export const ProfileProductMenu = ({
     return window.removeEventListener('click', () => null);
   }, []);
 
-  console.log(open);
   return (
     <div className='absolute top-3 right-3' ref={selectRef}>
       <Button

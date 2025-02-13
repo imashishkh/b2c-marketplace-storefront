@@ -31,28 +31,31 @@ export const ProfileProducts = ({
 
   return (
     <div>
+      <div className='lg:flex justify-between items-center'>
+        <h2 className='heading-xl uppercase text-primary lg:hidden'>
+          Selling
+        </h2>
+        <p className='label-md my-3 lg:my-0'>
+          {count} listings
+        </p>
+        <Input
+          icon={<SearchIcon />}
+          placeholder='Search listings'
+          value={search}
+          changeValue={setSearch}
+        />
+      </div>
       {!count ? (
         <ProfileProductsEmptyScreen />
       ) : (
-        <>
-          <div className='flex justify-between items-center'>
-            <p className='label-md'>{count} listings</p>
-            <Input
-              icon={<SearchIcon />}
-              placeholder='Search listings'
-              value={search}
-              changeValue={setSearch}
+        <div className='grid lg:grid-cols-2 gap-4 mt-4'>
+          {filteredProducts.map((product) => (
+            <ProfileProductCard
+              key={product.id}
+              product={product}
             />
-          </div>
-          <div className='grid grid-cols-2 gap-4 mt-4'>
-            {filteredProducts.map((product) => (
-              <ProfileProductCard
-                key={product.id}
-                product={product}
-              />
-            ))}
-          </div>
-        </>
+          ))}
+        </div>
       )}
     </div>
   );

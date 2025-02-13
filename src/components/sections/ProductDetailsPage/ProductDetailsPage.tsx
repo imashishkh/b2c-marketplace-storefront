@@ -22,7 +22,6 @@ export const ProductDetailsPage = async ({
     },
   }).then(({ response }) => response.products[0]);
 
-  console.log({ prod });
   const reviews = await listReviews();
 
   return (

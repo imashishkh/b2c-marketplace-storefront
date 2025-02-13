@@ -3,34 +3,28 @@ import {
   ProfileProducts,
   ProfileSidebar,
 } from '@/components/organisms';
-import { retrieveCustomer } from '@/lib/data/customer';
-import { listProducts } from '@/lib/data/products';
+import {
+  listSellerProducts,
+  retrieveSeller,
+} from '@/lib/data/seller';
 
 import { redirect } from 'next/navigation';
 
-export const ProfilePage = async ({
-  locale,
-}: {
-  locale: string;
-}) => {
-  const user = await retrieveCustomer();
+export const ProfilePage = async () => {
+  const seller = await retrieveSeller();
 
-  const {
-    response: { products },
-  } = await listProducts({
-    countryCode: locale,
-  });
+  const sellerProducts = await listSellerProducts();
 
-  if (!user) {
+  if (!seller) {
     redirect('/login');
   }
   return (
     <>
-      <ProfileHeader user={user} />
-      <div className='grid grid-cols-4 mt-4 gap-4'>
+      <ProfileHeader user={seller} />
+      <div className='grid lg:grid-cols-4 mt-4 gap-4 '>
         <ProfileSidebar />
         <div className='col-span-3'>
-          <ProfileProducts products={[]} />
+          <ProfileProducts products={sellerProducts} />
         </div>
       </div>
     </>

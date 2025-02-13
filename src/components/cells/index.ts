@@ -27,6 +27,8 @@ import { CartDropdown } from './CartDropdown/CartDropdown';
 import { ProfileSidebarSections } from './ProfileSidebarSections/ProfileSidebarSections';
 import { ProfileHeaderButtons } from './ProfileHeaderButtons/ProfileHeaderButtons';
 import { ProfileProductCard } from './ProfileProductCard/ProfileProductCard';
+import { ProfileAddListingButton } from './ProfileAddListingButton/ProfileAddListingButton';
+import { ProfileAddListingForm } from './ProfileAddListingForm/ProfileAddListingForm';
 
 export {
   Navbar,
@@ -58,4 +60,6 @@ export {
   ProfileSidebarSections,
   ProfileHeaderButtons,
   ProfileProductCard,
+  ProfileAddListingButton,
+  ProfileAddListingForm,
 };

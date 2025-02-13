@@ -7,7 +7,7 @@ import {
   EditIcon,
   RocketIcon,
 } from '@/icons';
-import { getProductPrice } from '@/lib/helpers/get-product-price';
+import { getSellerProductPrice } from '@/lib/helpers/get-seller-product-price';
 import { HttpTypes } from '@medusajs/types';
 import { formatDistanceToNow } from 'date-fns';
 import Image from 'next/image';
@@ -38,13 +38,9 @@ export const ProfileProductCard = ({
     { addSuffix: true }
   );
 
-  const { cheapestPrice } = getProductPrice({
+  const { cheapestPrice } = getSellerProductPrice({
     product,
   });
-
-  const isPromotion =
-    cheapestPrice?.original_price_number >
-    cheapestPrice?.calculated_price_number;
 
   return (
     <div className='border rounded-sm relative'>
@@ -63,11 +59,6 @@ export const ProfileProductCard = ({
           <h2 className='heading-xs mb-4'>
             {product.title}
           </h2>
-          {isPromotion && (
-            <p className='label-md line-through'>
-              {cheapestPrice?.original_price}
-            </p>
-          )}
           <p className='label-lg'>
             {cheapestPrice?.calculated_price}
           </p>

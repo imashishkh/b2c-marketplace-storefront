@@ -2,7 +2,7 @@
 
 import { Button, Input } from '@/components/atoms';
 import { Link } from '@/i18n/routing';
-import { login } from '@/lib/data/customer';
+import { login } from '@/lib/data/seller';
 import { useActionState } from 'react';
 
 export const LoginPage = () => {
@@ -37,9 +37,9 @@ export const LoginPage = () => {
             data-testid='password-input'
           />
         </div>
-        <div className='text-center text-negative pt-4 label-md min-h-10'>
+        {/* <div className='text-center text-negative pt-4 label-md min-h-10'>
           {message}
-        </div>
+        </div> */}
         <Button
           data-testid='sign-in-button'
           className='w-full mt-6'
