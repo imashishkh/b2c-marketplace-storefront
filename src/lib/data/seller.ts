@@ -3,7 +3,6 @@ import { getAuthHeaders, setAuthToken } from './cookies';
 import { sdk } from '../config';
 import { transferCart } from './customer';
 import { StoreVendor } from '@/types/user';
-import { products } from '@/data/productsMock';
 
 const MEDUSA_BACKEND_URL =
   process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL ||
@@ -24,7 +23,8 @@ export const retrieveSeller =
         {
           headers,
           query: {
-            fields: '+product, +created_at',
+            fields:
+              '+product, +created_at,*product,*product.variants,*product.variants.prices,*review',
           },
         }
       )
@@ -107,24 +107,4 @@ export const signup = async (
   } catch (error: any) {
     return error.toString();
   }
-};
-
-export const listSellerProducts = async () => {
-  const headers = {
-    ...(await getAuthHeaders()),
-  };
-
-  return await fetch(
-    `${MEDUSA_BACKEND_URL}/vendor/products?fields=+created_at`,
-    {
-      method: 'GET',
-      headers: {
-        ...headers,
-        'x-publishable-api-key': PUBLISHABLE_KEY,
-      },
-    }
-  )
-    .then((res) => res.json())
-    .then(({ products }) => products)
-    .catch(() => []);
 };

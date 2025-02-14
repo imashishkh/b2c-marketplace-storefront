@@ -1,7 +1,7 @@
 import { ProfileProducts } from '@/components/organisms';
 import { retrieveSeller } from '@/lib/data/seller';
 
-export const ProfilePage = async () => {
+export const ProfileDraftsPage = async () => {
   const seller = await retrieveSeller();
 
   const products = seller?.product || [];
@@ -9,7 +9,7 @@ export const ProfilePage = async () => {
   return (
     <ProfileProducts
       products={products.filter(
-        ({ status }) => status === 'published'
+        ({ status }) => status === 'draft'
       )}
     />
   );

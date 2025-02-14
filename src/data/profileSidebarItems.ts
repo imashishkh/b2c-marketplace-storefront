@@ -4,13 +4,13 @@ export default [
     links: [
       { url: '/profile', label: 'Selling' },
       { url: '#', label: 'Sold' },
-      { url: '#', label: 'Drafts' },
+      { url: '/profile/drafts', label: 'Drafts' },
     ],
   },
   {
     section: 'Profile',
     links: [
-      { url: '#', label: 'Reviews' },
+      { url: '/profile/reviews', label: 'Reviews' },
       { url: '#', label: 'Statistics' },
     ],
   },

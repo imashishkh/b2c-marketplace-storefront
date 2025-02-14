@@ -13,6 +13,8 @@ import { ProductDetailsPage } from './ProductDetailsPage/ProductDetailsPage';
 import { ProfilePage } from './ProfilePage/ProfilePage';
 import { LoginPage } from './LoginPage/LoginPage';
 import { RegisterPage } from './RegisterPage/RegisterPage';
+import { ProfilePageReviews } from './ProfilePageReviews/ProfilePageReviews';
+import { ProfileDraftsPage } from './ProfileDraftsPage/ProfileDraftsPage';
 
 export {
   Hero,
@@ -30,4 +32,6 @@ export {
   ProfilePage,
   LoginPage,
   RegisterPage,
+  ProfilePageReviews,
+  ProfileDraftsPage,
 };

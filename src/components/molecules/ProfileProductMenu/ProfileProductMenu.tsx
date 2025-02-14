@@ -35,7 +35,7 @@ export const ProfileProductMenu = ({
   return (
     <div className='absolute top-3 right-3' ref={selectRef}>
       <Button
-        variant='tonal'
+        variant='text'
         className='w-10 h-10 flex justify-center p-0 items-center'
         onClick={() => setOpen(!open)}
       >

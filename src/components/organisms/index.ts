@@ -22,6 +22,7 @@ import { ProductDetails } from './ProductDetails/ProductDetails';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { ProfileSidebar } from './ProfileSidebar/ProfileSidebar';
 import { ProfileProducts } from './ProfileProducts/ProfileProducts';
+import { ProfileProductsSkeleton } from './ProfileProductsSkeleton/ProfileProductsSkeleton';
 
 export {
   ProductCard,
@@ -48,4 +49,5 @@ export {
   ProfileHeader,
   ProfileSidebar,
   ProfileProducts,
+  ProfileProductsSkeleton,
 };

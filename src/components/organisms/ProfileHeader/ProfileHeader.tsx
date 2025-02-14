@@ -1,5 +1,4 @@
 import { format } from 'date-fns';
-import { HttpTypes } from '@medusajs/types';
 import {
   Avatar,
   Divider,
@@ -8,12 +7,15 @@ import {
 import { DoneIcon } from '@/icons';
 import { ProfileHeaderButtons } from '@/components/cells';
 import { StoreVendor } from '@/types/user';
+import { getUserRate } from '@/lib/helpers/get-user-rate';
 
 export const ProfileHeader = ({
   user,
 }: {
   user: StoreVendor | null;
 }) => {
+  const rate = getUserRate(user?.review);
+
   return (
     <>
       <div className='border rounded-t-sm p-5 lg:flex justify-between items-center'>
@@ -28,8 +30,8 @@ export const ProfileHeader = ({
               {user?.name}
             </h2>
             <div className='flex items-center gap-2'>
-              <StarRating rate={4} starSize={14} />{' '}
-              <span className='label-md'>4</span>
+              <StarRating rate={rate} starSize={14} />{' '}
+              <span className='label-md'>{rate}</span>
             </div>
           </div>
         </div>

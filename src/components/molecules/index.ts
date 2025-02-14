@@ -28,6 +28,7 @@ import { CartDropdownItem } from './CartDropdownItem/CartDropdownItem';
 import { ProfileSidebarLink } from './ProfileSidebarLink/ProfileSidebarLink';
 import { ProfileProductMenu } from './ProfileProductMenu/ProfileProductMenu';
 import { ProfileProductsEmptyScreen } from './ProfileProductsEmptyScreen/ProfileProductsEmptyScreen';
+import { ProfileReviewsEmptyScreen } from './ProfileReviewsEmptyScreen/ProfileReviewsEmptyScreen';
 
 export {
   PrimeCategoryNavbar,
@@ -60,4 +61,5 @@ export {
   ProfileSidebarLink,
   ProfileProductMenu,
   ProfileProductsEmptyScreen,
+  ProfileReviewsEmptyScreen,
 };
