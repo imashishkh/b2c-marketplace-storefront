@@ -1,3 +1,10 @@
+import { HttpTypes } from '@medusajs/types';
+import { StoreVendor } from './user';
+
+export type MercurProduct = HttpTypes.StoreProduct & {
+  seller?: StoreVendor;
+};
+
 export interface Product {
   id: number;
   brand: string;

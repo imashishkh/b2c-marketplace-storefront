@@ -18,11 +18,9 @@ export const ProductDetailsPage = async ({
     queryParams: {
       handle,
       fields:
-        '*variants.calculated_price,+variants.inventory_quantity,+review,+reviews',
+        '*variants.prices,*variants.calculated_price,+variants.inventory_quantity,+review,+reviews,*seller,*seller.review',
     },
   }).then(({ response }) => response.products[0]);
-
-  const reviews = await listReviews();
 
   return (
     <>

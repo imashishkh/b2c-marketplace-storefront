@@ -1,6 +1,7 @@
 import { HttpTypes } from '@medusajs/types';
 import { getPercentageDiff } from './get-precentage-diff';
 import { convertToLocale } from './money';
+import { MercurProduct } from '@/types/product';
 
 export const getPricesForVariant = (variant: any) => {
   if (!variant?.prices[0]?.amount) {
@@ -13,6 +14,11 @@ export const getPricesForVariant = (variant: any) => {
       amount: variant.prices[0].amount,
       currency_code: variant.prices[0].currency_code,
     }),
+    original_price_number: variant.prices[0].amount,
+    original_price: convertToLocale({
+      amount: variant.prices[0].amount,
+      currency_code: variant.prices[0].currency_code,
+    }),
   };
 };
 
@@ -20,7 +26,7 @@ export function getSellerProductPrice({
   product,
   variantId,
 }: {
-  product: HttpTypes.StoreProduct;
+  product: MercurProduct;
   variantId?: string;
 }) {
   if (!product || !product.id) {

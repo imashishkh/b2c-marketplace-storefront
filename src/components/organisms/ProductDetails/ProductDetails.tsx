@@ -7,17 +7,21 @@ import {
   ProductDetailsShipping,
   ProductPageDetails,
 } from '@/components/cells';
-import { seller } from '@/data/sellerMock';
 import { singleProduct } from '@/data/singleProductMock';
-import { HttpTypes } from '@medusajs/types';
+import { MercurProduct } from '@/types/product';
 
 export const ProductDetails = ({
   product,
   locale,
 }: {
-  product: HttpTypes.StoreProduct;
+  product: MercurProduct;
   locale: string;
 }) => {
+  const sellerRevies = !product?.seller?.review
+    ? []
+    : !Array.isArray(product.seller.review)
+    ? [product.seller.review]
+    : product?.seller?.review;
   return (
     <div>
       <ProductDetailsHeader
@@ -31,10 +35,8 @@ export const ProductDetails = ({
         measurements={singleProduct.measurements}
       />
       <ProductDetailsShipping />
-      <ProductDetailsSeller seller={seller} />
-      <ProductDetailsSellerReviews
-        reviews={seller.reviews}
-      />
+      <ProductDetailsSeller seller={product.seller} />
+      <ProductDetailsSellerReviews reviews={sellerRevies} />
       <ProductDetailsFooter
         tags={product.tags || []}
         posted={product.created_at}

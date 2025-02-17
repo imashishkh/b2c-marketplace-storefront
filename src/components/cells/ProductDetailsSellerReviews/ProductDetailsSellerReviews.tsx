@@ -1,11 +1,11 @@
 import { Button } from '@/components/atoms';
 import { SellerReview } from '@/components/molecules';
-import { SingleProductReview } from '@/types/product';
+import { Review } from '@/types/user';
 
 export const ProductDetailsSellerReviews = ({
   reviews,
 }: {
-  reviews: SingleProductReview[];
+  reviews: Review[];
 }) => {
   return (
     <div className='p-4 border rounded-sm'>

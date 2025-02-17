@@ -15,9 +15,9 @@ export const SellerReview = async ({
         <StarRating starSize={16} rate={review.rating} />
         <p className='label-md text-secondary'>
           {review.customer_id} |{' '}
-          {formatDistanceToNow(review.created_at, {
+          {/* {formatDistanceToNow(review.created_at, {
             addSuffix: true,
-          })}
+          })} */}
         </p>
       </div>
       <div className='flex gap-4'>

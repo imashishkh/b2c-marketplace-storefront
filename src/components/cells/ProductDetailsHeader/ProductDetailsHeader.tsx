@@ -5,9 +5,10 @@ import { HeartIcon } from '@/icons';
 import { HttpTypes } from '@medusajs/types';
 import { ProductVariants } from '@/components/molecules';
 import useGetAllSearchParams from '@/hooks/useGetAllSearchParams';
-import { getProductPrice } from '@/lib/helpers/get-product-price';
 import { useState } from 'react';
 import { addToCart } from '@/lib/data/cart';
+import { getSellerProductPrice } from '@/lib/helpers/get-seller-product-price';
+import { MercurProduct } from '@/types/product';
 
 const optionsAsKeymap = (
   variantOptions: HttpTypes.StoreProductVariant['options']
@@ -30,7 +31,7 @@ export const ProductDetailsHeader = ({
   product,
   locale,
 }: {
-  product: HttpTypes.StoreProduct & { brand?: string };
+  product: MercurProduct;
   locale: string;
 }) => {
   const [isAdding, setIsAdding] = useState(false);
@@ -55,11 +56,11 @@ export const ProductDetailsHeader = ({
     )?.id || '';
 
   // get variant price
-  const { variantPrice } = getProductPrice({
+  const { variantPrice } = getSellerProductPrice({
     product,
     variantId,
   });
-
+  console.log(product);
   // add the selected variant to the cart
   const handleAddToCart = async () => {
     if (!variantId) return null;
@@ -83,9 +84,9 @@ export const ProductDetailsHeader = ({
     <div className='border rounded-sm p-5'>
       <div className='flex justify-between'>
         <div>
-          <h2 className='label-md text-secondary'>
+          {/* <h2 className='label-md text-secondary'>
             {product?.brand || 'No brand'}
-          </h2>
+          </h2> */}
           <h1 className='heading-lg text-primary'>
             {product.title}
           </h1>

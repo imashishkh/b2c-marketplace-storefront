@@ -24,35 +24,40 @@ export const ProductVariants = ({
 
   return (
     <div className='my-4 space-y-2'>
-      {(product.options || []).map(
-        ({ id, title, values }) => (
-          <div key={id}>
-            <span className='label-md text-secondary'>
-              {title}:{' '}
-            </span>
-            <span className='label-md text-primary'>
-              {selectedVariant[title.toLowerCase()]}
-            </span>
-            <div className='flex gap-2 mt-2'>
-              {(values || []).map(({ id, value }) => (
-                <Chip
-                  key={id}
-                  selected={
-                    selectedVariant[title.toLowerCase()] ===
-                    value
-                  }
-                  color={title === 'Color'}
-                  value={value}
-                  onSelect={() =>
-                    setOptionValue(
-                      title.toLowerCase(),
-                      value
-                    )
-                  }
-                />
-              ))}
+      {!product.options || product.options.length < 2 ? (
+        <div className='h-10' />
+      ) : (
+        (product.options || []).map(
+          ({ id, title, values }) => (
+            <div key={id}>
+              <span className='label-md text-secondary'>
+                {title}:{' '}
+              </span>
+              <span className='label-md text-primary'>
+                {selectedVariant[title.toLowerCase()]}
+              </span>
+              <div className='flex gap-2 mt-2'>
+                {(values || []).map(({ id, value }) => (
+                  <Chip
+                    key={id}
+                    selected={
+                      selectedVariant[
+                        title.toLowerCase()
+                      ] === value
+                    }
+                    color={title === 'Color'}
+                    value={value}
+                    onSelect={() =>
+                      setOptionValue(
+                        title.toLowerCase(),
+                        value
+                      )
+                    }
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          )
         )
       )}
     </div>
