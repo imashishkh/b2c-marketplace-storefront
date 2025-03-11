@@ -10,9 +10,11 @@ import { AlgoliaProductsListing } from "@/components/sections"
 export async function generateMetadata({
   params,
 }: {
-  params: { category: string }
+  params: Promise<{ category: string }>
 }): Promise<Metadata> {
-  const cat = await getCategoryByHandle([params.category])
+  const { category } = await params
+
+  const cat = await getCategoryByHandle([category])
 
   return generateCategoryMetadata(cat)
 }
